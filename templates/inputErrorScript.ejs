@@ -1,0 +1,11 @@
+<script>
+const errors = <%- JSON.stringify(locals.errors || null) %>;
+if (errors) {
+  Object.keys(errors).forEach(error => {
+    const el = document.getElementById(error + "-error");
+    if (el) {
+      el.innerText = errors[error];
+    }
+  })
+}
+</script>

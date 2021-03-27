@@ -1,0 +1,55 @@
+{
+  "name": "hapihookey",
+  "version": "0.0.0",
+  "main": "lib/main.js",
+  "scripts": {
+    "dev:tsc": "tsc --watch -p .",
+    "dev:serve": "nodemon -e ts,js,ejs -w lib -w templates lib/main.js",
+    "dev": "run-p dev:*",
+    "minify:css": "curl -X POST -s --data-urlencode 'input@static/css/style.css' https://cssminifier.com/raw > static/css/style.min.css",
+    "build:code": "tsc -p tsconfig-prod.json",
+    "build:css:prod": "NODE_ENV=production tailwindcss-cli build src/css/style.css -o static/css/style.css && yarn minify:css",
+    "build:css:dev": "tailwindcss-cli build src/css/style.css -o static/css/style.css",
+    "build": "run-p build:css:prod build:code",
+    "start": "NODE_ENV=production node lib/main.js"
+  },
+  "engines": {
+    "node": ">=12.0",
+    "yarn": ">=1.22.0",
+    "npm": ">=7.5.1"
+  },
+  "dependencies": {
+    "@hapi/boom": "^9.1.2",
+    "@hapi/cookie": "^11.0.2",
+    "@hapi/hapi": "^20.1.2",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/vision": "^6.0.1",
+    "@types/bcrypt": "^3.0.0",
+    "@types/hapi__vision": "^5.5.2",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "knex": "^0.21.17",
+    "laabr": "^6.1.3",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "@types/ejs": "^3.0.6",
+    "@types/hapi__cookie": "^10.1.2",
+    "@types/hapi__hapi": "^20.0.5",
+    "@types/hapi__inert": "^5.2.2",
+    "@types/node": "^14.14.35",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "autoprefixer": "^10.2.5",
+    "eslint": "^7.22.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.8",
+    "tailwindcss": "^2.0.4",
+    "tailwindcss-cli": "^0.1.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}
