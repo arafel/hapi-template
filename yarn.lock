@@ -308,10 +308,10 @@
   dependencies:
     "@hapi/hoek" "9.x.x"
 
-"@hapi/vision@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@hapi/vision/-/vision-6.0.1.tgz#976c3575be56d3cb5b472ddcfe0b7403778706fd"
-  integrity sha512-xv4PwmhbXCLzDfojZ7l4+P/YynBhMInV8GtLPH4gB74prhwOl8lGcJxxK8V9rf1aMH/vonM5yVGd9FuoA9sT0A==
+"@hapi/vision@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@hapi/vision/-/vision-6.1.0.tgz#939f10653fbd9df110c44dfd021308b633e85b53"
+  integrity sha512-ll0zJ13xDxCYIWvC1aq/8srK0bTXfqZYGT+YoTi/fS42gYYJ3dnvmS35r8T8XXtJ6F6cmya8G2cRlMR/z11LQw==
   dependencies:
     "@hapi/boom" "9.x.x"
     "@hapi/bounce" "2.x.x"
