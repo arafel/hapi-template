@@ -474,10 +474,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/hapi__vision@^5.5.2":
-  version "5.5.2"
-  resolved "https://registry.yarnpkg.com/@types/hapi__vision/-/hapi__vision-5.5.2.tgz#db4d17f51f8e2a6135b9f27cd449c42aff6ff5df"
-  integrity sha512-XGpvn+lfvk9ervfe9VlDL47jk3KF60I5VjoazxLQBklZ7t2MoGhLFo+SI9T89Abwnw3OYjumrOM/DqEWazsr1w==
+"@types/hapi__vision@^5.5.3":
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/@types/hapi__vision/-/hapi__vision-5.5.3.tgz#e7a32c9f6e55a64655f9f2ca4c11cf0bd63aa50d"
+  integrity sha512-R4+r9345+5LCM8/0OQ1J8UVVPwnOwMdUVtPrtJE4oNbZ31+rLSy/bLoGpuZJwjROeC006YXbibnRF1hcVQFjGA==
   dependencies:
     "@types/hapi__hapi" "*"
     handlebars "^4.1"
