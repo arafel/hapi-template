@@ -187,10 +187,10 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.1.1.tgz#9daf5745156fd84b8e9889a2dc721f0c58e894aa"
   integrity sha512-CAEbWH7OIur6jEOzaai83jq3FmKmv4PmX1JYfs9IrYcGEVI/lyL1EXJGCj7eFVJ0bg5QR8LMxBlEtA+xKiLpFw==
 
-"@hapi/inert@^6.0.3":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@hapi/inert/-/inert-6.0.3.tgz#57af5d912893fabcb57eb4b956f84f6cd8020fe1"
-  integrity sha512-Z6Pi0Wsn2pJex5CmBaq+Dky9q40LGzXLUIUFrYpDtReuMkmfy9UuUeYc4064jQ1Xe9uuw7kbwE6Fq6rqKAdjAg==
+"@hapi/inert@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@hapi/inert/-/inert-6.0.4.tgz#0544221eabc457110a426818358d006e70ff1f41"
+  integrity sha512-tpmNqtCCAd+5Ts07bJmMaA79+ZUIf0zSWnQMaWtbcO4nGrO/yXB2AzoslfzFX2JEV9vGeF3FfL8mYw0pHl8VGg==
   dependencies:
     "@hapi/ammo" "5.x.x"
     "@hapi/boom" "9.x.x"
