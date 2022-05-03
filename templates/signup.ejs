@@ -1,31 +1,67 @@
 <%- include("header"); -%>
 
-<% if(locals.message) { %>
-  <h3><%= locals.message %></h3>
-<% } %>
+<div class="columns is-centered my-6">
+  <div class="column is-half">
+    <div class="box">
+      <h2 class="title is-2 has-text-centered">
+        Sign up
+      </h2>
 
-<form method="post">
-  <div class="w-2/5 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-    <div class="mb-4">
-      <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
-        email
-      </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="emailInput" type="text" name="email" placeholder="email" required>
-      <span id="email-error" class="error text-red-500"></span>
-    </div>
-    <div class="mb-6">
-      <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
-        Password
-      </label>
-      <input class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="passwordInput" type="password" name="password" placeholder="password" required>
-      <span id="password-error" class="error text-red-500"></span>
-      <p class="text-red text-xs italic">Please choose a password.</p>
-    </div>
-    <div class="flex items-center justify-between">
-      <input value="Join" type="submit" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+      <p class="my-5 has-text-centered is-size-4">
+        Already have an account? <a href="/login">Log in</a>.
+      </p>
+
+      <% if(locals.message) { %>
+      <article class="message">
+        <div class="message-body"><%= locals.message %></div>
+      </article>
+      <% } %>
+
+      <form method="POST">
+        <div>
+          <div class="field mx-5">
+            <label class="label" for="email">E-mail</label>
+            <div class="control has-icons-left">
+              <input class="input" id="email" type="email" name="email" placeholder="e-mail address"
+                     autocomplete="email" required/>
+              <span class="icon is-medium is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span id="email-error"></span>
+            </div>
+          </div>
+
+          <div class="field mx-5 pb-3">
+            <label class="label" for="password">Password</label>
+            <div class="control has-icons-left">
+              <input class="input" type="password" name="password" placeholder="password"
+                     autocomplete="current-password" required>
+              <span class="icon is-medium is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+              <span id="password-error"></span>
+            </div>
+          </div>
+
+          <div class="level pt-3">
+            <div class="level-item">
+              <button type="submit" class="button is-primary is-medium">
+                Sign up
+              </button>
+            </div>
+
+            <div class="level-item">
+              <a href="/forgot-password" class="button is-family-secondary is-medium">
+                Forgot your password?
+              </a>
+            </div>
+          </div>
+      </form>
+
+      </div>
     </div>
   </div>
-</form>
+</div>
 
 <%- include("inputErrorScript"); -%>
 

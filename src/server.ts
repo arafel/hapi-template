@@ -3,6 +3,7 @@ import 'dotenv/config';
 
 import Hapi from "@hapi/hapi";
 import { Request, Server, Plugin } from "@hapi/hapi";
+import { ResponseObject, ResponseToolkit } from "@hapi/hapi";
 import Path from "path";
 
 import hapiCookie from "@hapi/cookie";
@@ -54,6 +55,14 @@ async function registerServerPlugins(server: Server) {
   await server.register(hapiInert);
 }
 
+async function renderIndex(request: Request, h: ResponseToolkit): Promise<ResponseObject> {
+    if (request.auth.isAuthenticated) {
+        return h.view("index.ejs");
+    } else {
+        return h.view("index_public.ejs");
+    }
+}
+
 export const init = async function(): Promise<Server> {
   if (!production) {
     process.env.BCRYPT_SALT_ROUNDS="1";
@@ -72,11 +81,9 @@ export const init = async function(): Promise<Server> {
   server.route({
     method: "GET",
     path: "/ping",
-    // options: {
-    //   auth: {
-    //     mode: 'try'
-    //   }
-    // },
+    options: {
+      auth: false,
+    },
     handler: function(request) {
       request.log(["debug"], "PING received");
       server.log(["debug"], "PING received");
@@ -88,12 +95,21 @@ export const init = async function(): Promise<Server> {
 
   server.route({
     method: "GET",
+    path: "/",
+    options: {
+      auth: {
+        mode: 'try'
+      }
+    },
+    handler: renderIndex
+  });
+
+  server.route({
+    method: "GET",
     path: "/static/{param*}",
-    // options: {
-    //   auth: {
-    //     mode: 'try'
-    //   }
-    // },
+    options: {
+      auth: false
+    },
     handler: {
       directory: {
         path: Path.join(__dirname, "../static/")

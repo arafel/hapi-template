@@ -3,5 +3,4 @@ node_modules/
 tsconfig.tsbuildinfo
 yarn-error.log
 .env
-static/css/style.min.css
-static/css/style.css
+/static
