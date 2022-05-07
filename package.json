@@ -14,6 +14,7 @@
     "build:css:minify": "postcss static/css/style.css --map static/css/style.min.css.map -o static/css/style.min.css",
     "build:css": "yarn build:css:compile && yarn build:css:minify",
     "build": "run-p build:css build:code",
+    "knex": "knex --knexfile src/knexfile.ts",
     "knex:migrate:dev": "yarn knex migrate:latest --env development",
     "knex:migrate:test": "yarn knex migrate:latest --env test",
     "knex:migrate:prod": "yarn knex migrate:latest --env production",
