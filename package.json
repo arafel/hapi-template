@@ -35,7 +35,7 @@
     "@types/bcrypt": "^3.0.1",
     "@types/hapi__vision": "^5.5.3",
     "bcrypt": "^5.0.1",
-    "bulma": "^0.9.3",
+    "bulma": "^0.9.4",
     "dotenv": "^8.6.0",
     "ejs": "^3.1.7",
     "knex": "^0.21.17",
